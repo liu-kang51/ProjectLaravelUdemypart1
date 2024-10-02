@@ -6,6 +6,59 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//fallback route
+// Route::fallback(function() {
+//     return "404 Not Found The web";
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Route Methods
 /*
 *  1. Get - if we wanna to get data
@@ -16,33 +69,28 @@ Route::get('/', function () {
 *
 */
 
+// Route::get('get-route', function () {
+//     return;
+// });
+
+// Route::post('post-route', function () {
+//     return;
+// });
 
 
+// Route::put('put-route', function () {
+//     return;
+// });
 
 
+// Route::patch('patch-route', function () {
+//     return;
+// });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Route::delete('delete-route', function () {
+//     return;
+// });
 
 
 
