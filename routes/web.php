@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',['title' => 'home' ]);
+});
+
+Route::get('/home', function () {
+    return view('home',['title' => 'Home Page' ]);
 });
 
 Route::fallback(function() {
