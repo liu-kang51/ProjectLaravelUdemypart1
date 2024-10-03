@@ -9,11 +9,40 @@
 </head>
 <body>
     <h1 class="font-bold"> I am Home</h1>
-    
+    <a href="/contact">Contact</a>
 
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     {{-- <a href="{{ route('my.about') }}" class="hover:text-blue-300 hover:underline">About</a>

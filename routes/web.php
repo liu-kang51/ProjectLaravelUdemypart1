@@ -6,7 +6,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::fallback(function() {
+    return "404 Not Found The web";
+});
 
+Route::get('/contact', function () {
+    return view('contact', ['title' => 'hello', 'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident velit doloribus exercitationem ullam corrupti quos obcaecati sed dolores veritatis accusantium. Harum, eos? Praesentium quod pariatur hic? Sit commodi sint in.']);
+});
+
+
+
+Route::get('/blog', function () {
+    $title = "blog is page";
+    $description = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident velit doloribus exercitationem ullam corrupti quos obcaecati sed dolores veritatis accusantium. Harum, eos? Praesentium quod pariatur hic? Sit commodi sint in.";
+    return view('blog.cerita',['title' => $title, 'description' => $description]); //buat msk ke sebuah folder dengan namafilenya didalam
+});
+
+Route::get('/about', function () {
+    $books = ["majalah","buku cerita","buku seram"];
+    return view('about', ['books' => $books]);
+});
 
 
 
