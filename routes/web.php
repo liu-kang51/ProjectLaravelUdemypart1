@@ -1,22 +1,22 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome',['title' => 'home' ]);
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/home', function () {
-    return view('home',['title' => 'Home Page' ]);
-});
+Route::get('/home', [HomeController::class, 'showHomePage']);
 
 Route::fallback(function() {
     return "404 Not Found The web";
 });
 
-Route::get('/contact', function () {
-    return view('contact', ['title' => 'hello', 'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident velit doloribus exercitationem ullam corrupti quos obcaecati sed dolores veritatis accusantium. Harum, eos? Praesentium quod pariatur hic? Sit commodi sint in.']);
-});
+Route::get('/contact', [HomeController::class,'showArtikelPage']);
+
+
+
+
+
 
 
 
@@ -26,10 +26,10 @@ Route::get('/blog', function () {
     return view('blog.cerita',['title' => $title, 'description' => $description]); //buat msk ke sebuah folder dengan namafilenya didalam
 });
 
-Route::get('/about', function () {
-    $books = ["majalah","buku cerita","buku seram"];
-    return view('about', ['books' => $books]);
-});
+// Route::get('/about', function () {
+//     $books = ["majalah","buku cerita","buku seram"];
+//     return view('about', ['books' => $books]);
+// });
 
 
 
