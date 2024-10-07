@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -12,6 +14,9 @@ Route::fallback(function() {
 });
 
 Route::get('/contact', [HomeController::class,'showArtikelPage']);
+Route::get('/single-action', SingleActionController::class);
+
+Route::resource('/blog', BlogController::class);
 
 
 
@@ -20,11 +25,24 @@ Route::get('/contact', [HomeController::class,'showArtikelPage']);
 
 
 
-Route::get('/blog', function () {
-    $title = "blog is page";
-    $description = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident velit doloribus exercitationem ullam corrupti quos obcaecati sed dolores veritatis accusantium. Harum, eos? Praesentium quod pariatur hic? Sit commodi sint in.";
-    return view('blog.cerita',['title' => $title, 'description' => $description]); //buat msk ke sebuah folder dengan namafilenya didalam
-});
+
+
+
+// Route::post('/blog/create',[BlogController::class, 'create'])->name('blog.create');
+// Route::post('/blog/show',[BlogController::class, 'show'])->name('blog.show');
+
+// Route::post('/blog/update',[BlogController::class, 'update'])->name('blog.update');
+
+// Route::post('/blog/delete',[BlogController::class, 'delete'])->name('blog.delete');
+
+
+
+
+// Route::get('/blog', function () {
+//     $title = "blog is page";
+//     $description = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident velit doloribus exercitationem ullam corrupti quos obcaecati sed dolores veritatis accusantium. Harum, eos? Praesentium quod pariatur hic? Sit commodi sint in.";
+//     return view('blog.cerita',['title' => $title, 'description' => $description]); //buat msk ke sebuah folder dengan namafilenya didalam
+// });
 
 // Route::get('/about', function () {
 //     $books = ["majalah","buku cerita","buku seram"];
