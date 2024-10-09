@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\MyBlog;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleActionController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -16,10 +17,12 @@ Route::fallback(function() {
 Route::get('/contact', [HomeController::class,'showArtikelPage']);
 Route::get('/single-action', SingleActionController::class);
 
-Route::resource('/blog', BlogController::class);
+// Route::resource('/blog', BlogController::class);
 
-
-
+Route::get('/blog', function(){
+    $blogs = MyBlog::all(); // Select * From blogs; all data
+    dd($blogs);
+});
 
 
 
