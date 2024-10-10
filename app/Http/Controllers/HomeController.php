@@ -3,12 +3,47 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     function index(){
+        //insert data
+    //     DB::table('users')->insert([[
+    //         'name' => 'hohan111',
+    //         'email' => 'jaaaa11111@example.com',
+    //         'password' => '1234'
+    //     ],
+    //     [
+    //         'name' => 'artik12313',
+    //         'email' => 'johdafafn@example.com',
+    //         'password' => '1234'
+    //     ]]
+    // );
+
+    //Get data
+    // $users = DB::table('users')->where('email','jaaaa@example.com')->where('id', 2)->first();
+    // $users = DB::table('users')->where('id', '>', 2 )->get();
+    // return $users;
+
+    //Update data
+    // DB::table('users')->where('id', 1)->update([
+    //     'name' => 'kimak',
+    //     'email' => 'adafs234243@gmail.com',
+    // ]);
+
+    //delete data
+    DB::table('users')->where('id',1)->delete();
        return view ('welcome'); 
     }
+
+
+
+
+
+
+
+
 
     function showHomePage(){
         return view('home');
