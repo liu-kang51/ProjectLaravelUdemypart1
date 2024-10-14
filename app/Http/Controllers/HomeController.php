@@ -8,7 +8,38 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     function index(){
-        //insert data
+        $products = DB::table('products')->avg('price');
+        dd($products);
+
+        return view('welcome');
+      
+    }
+
+
+
+
+
+
+
+
+
+    function showHomePage(){
+        return view('home');
+    }
+
+    function showArtikelPage() {
+        return view('contact', [
+            'title' => 'hello', 
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident velit doloribus exercitationem ullam corrupti quos obcaecati sed dolores veritatis accusantium. Harum, eos? Praesentium quod pariatur hic? Sit commodi sint in.'
+        ]);
+    }
+}    
+
+
+
+
+
+  //insert data
     //     DB::table('users')->insert([[
     //         'name' => 'hohan111',
     //         'email' => 'jaaaa11111@example.com',
@@ -33,26 +64,8 @@ class HomeController extends Controller
     // ]);
 
     //delete data
-    DB::table('users')->where('id',1)->delete();
-       return view ('welcome'); 
-    }
+    // DB::table('users')->where('id',1)->delete();
+    //    return view ('welcome'); 
 
-
-
-
-
-
-
-
-
-    function showHomePage(){
-        return view('home');
-    }
-
-    function showArtikelPage() {
-        return view('contact', [
-            'title' => 'hello', 
-            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident velit doloribus exercitationem ullam corrupti quos obcaecati sed dolores veritatis accusantium. Harum, eos? Praesentium quod pariatur hic? Sit commodi sint in.'
-        ]);
-    }
-}    
+      // $blogs = DB::table('blogs')->pluck('title','id')->toArray();
+        // dd($blogs);
