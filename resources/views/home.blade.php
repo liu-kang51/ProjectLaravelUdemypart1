@@ -17,10 +17,10 @@
 
 @include('gallery')
 @endsection
-@push("scripts")
+{{-- @push("scripts")
 <script>
   $(document).ready(function(){
       alert("homeee")
   })
 </script>
-@endpush
+@endpush --}}

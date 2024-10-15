@@ -19,10 +19,10 @@
 
   @include('gallery')
 @endsection
-@push("scripts")
+{{-- @push("scripts")
 <script>
   $(document).ready(function(){
       alert("Welcome Breee")
   })
 </script>
-@endpush
+@endpush --}}
