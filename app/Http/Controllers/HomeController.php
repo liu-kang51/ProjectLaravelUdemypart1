@@ -11,13 +11,7 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     function index(){
-        // Product::find(1)->delete();
-        // $product = Product::all();
-        // dd($product);   
-        // $product = Product::find(2);
-        // $product = Product::withTrashed()->find(1); //untuk menliht data yang di hps dari soft delete 
-        $product = Product::onlyTrashed()->get(); //untuk menliht data yang di hps dari soft delete 
-        dd($product);   
+    
 
         return view('welcome');
     }
@@ -155,3 +149,23 @@ class HomeController extends Controller
         //scope active
         // $blogs = MyBlog::Active()->get();
         // dd($blogs);
+
+
+        // find data delete
+        // Product::find(1)->delete();
+        // $product = Product::all();
+        // dd($product);   
+        // $product = Product::find(2);
+        // $product = Product::withTrashed()->find(1); //untuk menliht data yang di hps dari soft delete 
+        // $product = Product::onlyTrashed()->get(); //untuk menliht data yang di hps dari soft delete 
+
+
+        //store data yang di hapus
+        //$product = Product::withTrashed()->find(1)->restore();
+
+        //hapus permanent
+            // $product = Product::find(1)->delete();
+        // $product = Product::withTrashed()->find(1)->restore();
+        // $product = Product:: withTrashed()->find(1)->forceDelete(); //delete permanent
+       
+        // dd($product);   

@@ -3,26 +3,75 @@
 use App\Models\MyBlog;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\contactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleActionController;
+use Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/home', [HomeController::class, 'showHomePage']);
+Route::get('contact',[contactController::class, 'index'])->name('contact.index');
+Route::post('contact',[contactController::class, 'contactSubmit'])->name('contact.submit');
 
-Route::fallback(function() {
-    return "404 Not Found The web";
-});
+// post,
+// put,
+// patch,
+// delete
 
-Route::get('/contact', [HomeController::class,'showArtikelPage']);
-Route::get('/single-action', SingleActionController::class);
 
-// Route::resource('/blog', BlogController::class);
 
-Route::get('/blog', function(){
-    $blogs = MyBlog::all(); // Select * From blogs; all data
-    dd($blogs);
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/home', [HomeController::class, 'showHomePage']);
+
+// Route::fallback(function() {
+//     return "404 Not Found The web";
+// });
+
+// Route::get('/contact', [HomeController::class,'showArtikelPage']);
+// Route::get('/single-action', SingleActionController::class);
+
+// // Route::resource('/blog', BlogController::class);
+
+// Route::get('/blog', function(){
+//     $blogs = MyBlog::all(); // Select * From blogs; all data
+//     dd($blogs);
+// });
 
 
 
