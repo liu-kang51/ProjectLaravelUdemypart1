@@ -4,7 +4,7 @@
 
 <section>
      
-<form class="max-w-sm mx-auto mt-3" action="{{ route('contact.submit') }}" method="POST">
+<form class="max-w-xl mx-auto mt-3" action="{{ route('contact.submit') }}" method="POST">
 
     @if ($errors->any())
       @foreach ($errors->all() as $error)

@@ -19,11 +19,14 @@ class ContactStoreRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+    //custom message pemberi tahuan
     public function rules(): array
     {
         return [
             'name' => ['required' , 'max:20', 'min:2'],
-            'email' => ['required' , 'email']
+            'email' => ['required' , 'email'],
+            'subject' => ['nullable', 'max:255'],
+            'message' => ['required', 'max:100'],
         ];
     }
     function messages()
@@ -32,7 +35,8 @@ class ContactStoreRequest extends FormRequest
             'name.required' => 'hey tolong minimal 2 kata cok',
              'name.max' => 'heyy kefull cok ',
              'name.min' => 'kecil kali cok 2 lah',
-             'email.required' => 'oi pokaii email cok'
+             'email.required' => 'oi pokaii email cok',
+             'message.required' => 'tolong di isi',
         ];
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ContactStoreRequest;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactStoreRequest;
 
 class contactController extends Controller
 {
@@ -12,7 +13,14 @@ class contactController extends Controller
     }
 
     function contactSubmit(ContactStoreRequest $request){
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        $contact->save();
 
+        dd("saved");
 
 
 
