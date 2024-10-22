@@ -18,6 +18,8 @@ Route::get('/file-upload', [FileUploadController::class, 'index'])->name('file.u
 
 Route::post('/file-upload',[FileUploadController::class, 'store'])->name('file.store');
 
+Route::get('/file-download',[FileUploadController::class, 'download'])->name('file.download');
+
 // post,
 // put,
 // patch,
