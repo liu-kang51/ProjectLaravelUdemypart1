@@ -9,7 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleActionController;
 use Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'showHomePage'])->name('showHomePage');
 
 Route::get('contact',[contactController::class, 'index'])->name('contact.index');
 Route::post('contact',[contactController::class, 'contactSubmit'])->name('contact.submit');
